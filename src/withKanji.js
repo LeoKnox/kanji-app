@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-export const withUser = (Component, userId) => {
+export const withKanji = (Component, userId) => {
     return props => {
         const [kanji, setKanji] = useState(null);
 
