@@ -1,8 +1,5 @@
 import './App.css';
-import { KanjiInfo } from './KanjiInfo';
-import { withKanji } from './withKanji';
-
-const KanjiInfoWithLoader = withKanji(KanjiInfo, 1);
+import Single from './my_data.js'
 
 function App() {
   return (
@@ -11,7 +8,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <KanjiInfoWithLoader />
+        <Single />
       </header>
     </div>
   );
