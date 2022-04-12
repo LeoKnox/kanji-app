@@ -1,7 +1,12 @@
-export const Single = ({ data }) => {
-    const {kanji, meaning } = data;
+import React, { Component } from 'react';
+import data from './data.json';
 
-    return (
-        <p>{kanji}: {meaning}</p>
-    );
+class Single extends Component {
+    render() {
+        return (
+            <p>{data[0][kanji]}:</p>
+        )
+    }
 }
+
+export default Single;
