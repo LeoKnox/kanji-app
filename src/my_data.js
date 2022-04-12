@@ -1,14 +1,10 @@
 import data from './data.js';
 import React, {useEffect, useState} from 'react';
 
-const Single = () => {
-
+function Single() {
     return (
         <div>
-            {data.map( d =>
-                <p>{d.kanji}:{d.meaning}</p>
-                )
-            }
+            <p>{data[0]}</p>
         </div>
       );
 }
