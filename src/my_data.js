@@ -1,12 +1,7 @@
-import data from './data.js';
-import React, {useEffect, useState} from 'react';
+export const Single = ({ data }) => {
+    const {kanji, meaning } = data;
 
-function Single() {
     return (
-        <div>
-            <p>{data[0]}</p>
-        </div>
-      );
+        <p>{kanji}: {meaning}</p>
+    );
 }
-
-export default Single;

@@ -1,5 +1,7 @@
 import './App.css';
-import Single from './my_data.js'
+import Single from './my_data.js';
+import RegularList from './RegularList.js';
+import data from './data.js';
 
 function App() {
   return (
@@ -8,7 +10,11 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <Single />
+        <RegularList
+          items={data}
+          resourName="kanji"
+          itemComponent={Single}
+        />
       </header>
     </div>
   );
