@@ -4,7 +4,12 @@ import React, {useEffect, useState} from 'react';
 const Single = () => {
 
     return (
-        <p>{data[0]}</p>
+        <div>
+            {data.map( d =>
+                <p>{d.kanji}:{d.meaning}</p>
+                )
+            }
+        </div>
       );
 }
 

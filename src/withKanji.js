@@ -6,10 +6,11 @@ export const withKanji = (Component, userId) => {
 
         useEffect(() => {
             (async () => {
-                //const respoonse = await axios.get(`/users/${userId}`);
+                //const response = await axios.get(`/users/${userId}`);
                 const response = [
                     {idkanji_dict:1, kanji:"一", strokes:1, meaning:"one",prounciation:"ichi, itsu",reading:"hito-tsu",grade:1}
                 ];
+                //const response = {idkanji_dict:1, kanji:"一", strokes:1, meaning:"one",prounciation:"ichi, itsu",reading:"hito-tsu",grade:1}
                 setKanji(response.data);
         })();
     });
