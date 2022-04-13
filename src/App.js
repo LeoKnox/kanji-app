@@ -1,14 +1,12 @@
 import './App.css';
-import Single from './my_data.js';
+import KanjiMap from './my_data.js';
 
 function App() {
   return (
     <div className="App">
+      <h1>Kanji Trainer</h1>
       <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Single />
+        <KanjiMap />
       </header>
     </div>
   );
