@@ -3,11 +3,17 @@
 }
 
 .kanjiWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(2, 200px);
   background-color: lightgray;
+  grid-gap: 50px 30px;
   margin: 20px;
   padding: 20px;
 }
 
 .kanjiCube {
+  text-align: center;
+  font-size: 6em;
   color: red;
 }
