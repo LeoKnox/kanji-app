@@ -4,7 +4,9 @@ import data from './data.json';
 class Single extends Component {
     render() {
         return (
-            <p>{data[0].kanji} : {data[0].meaning}</p>
+            this.data = data.map((d) =>
+                <p>{d.kanji} : {d.meaning}</p>
+            )
         )
     }
 }
