@@ -14,7 +14,8 @@ function kanjiMap() {
 
 function updateKanji(e) {
     const find = e.target.value;
-    console.log(find);
+    const ans = datatwo[Math.floor(datatwo.length*Math.random())]
+    console.log(ans);
     data.sort(() => Math.random() - 0.5)
     const datatwo = data.slice(0,6);
     return (

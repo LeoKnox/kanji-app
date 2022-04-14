@@ -1,4 +1,5 @@
 .App {
+  background-color: darkgray;
   text-align: center;
 }
 
@@ -7,7 +8,9 @@
   grid-template-columns: auto auto auto;
   background-color: lightgray;
   padding: 10px;
+  column-gap: 5px;
   row-gap: 5px;
+  margin: 25px;
 }
 
 .kanjiCube {
@@ -15,5 +18,9 @@
   padding: 15px;
   border: 2px solid black;
   font-size: 6em;
-  color: red;
+  color: rgb(194, 3, 3);
+}
+
+#kanjiTitle {
+  color: darkred;
 }
