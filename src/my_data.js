@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import data from './data.json';
 
 data.sort(() => Math.random() - 0.5)
@@ -13,6 +13,7 @@ function kanjiMap() {
 }
 
 function updateKanji(e) {
+    const [datathree, setDatathree] = useState("blue");
     /*
     const find = e.target.value;
     const ans = datatwo[Math.floor(datatwo.length*Math.random())]
@@ -22,7 +23,7 @@ function updateKanji(e) {
     return (
         <kanjiMap />
     ) */
-    kanjiMap();
+    console.log(datathree)
 }
 
 function Single() {
