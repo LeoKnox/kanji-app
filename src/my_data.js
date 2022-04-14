@@ -13,17 +13,21 @@ function kanjiMap() {
 }
 
 function updateKanji(e) {
-    const [datathree, setDatathree] = useState("blue");
-    /*
     const find = e.target.value;
-    const ans = datatwo[Math.floor(datatwo.length*Math.random())]
-    console.log(ans);
+    //const ans = datatwo[Math.floor(datatwo.length*Math.random())]
+    console.log(find);
     data.sort(() => Math.random() - 0.5)
     const datatwo = data.slice(0,6);
+    console.log(datatwo);
     return (
-        <kanjiMap />
-    ) */
-    console.log(datathree)
+        datatwo.map((d, i) =>
+            <p key={i}>
+                <button className="kanjiCube" value="red" onClick={updateKanji}>
+                {d.kanji}
+                </button>
+            </p>
+        )
+    )
 }
 
 function Single() {
