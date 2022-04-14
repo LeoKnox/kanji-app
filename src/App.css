@@ -8,8 +8,7 @@
   grid-template-columns: auto auto auto;
   background-color: lightgray;
   padding: 10px;
-  column-gap: 5px;
-  row-gap: 5px;
+  column-gap: 15px;
   margin: 25px;
 }
 
