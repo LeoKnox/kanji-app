@@ -13,12 +13,14 @@ function kanjiMap() {
 }
 
 function updateKanji(e) {
+    //const [kanji, setKanji] = useState("blue");
     const find = e.target.value;
     //const ans = datatwo[Math.floor(datatwo.length*Math.random())]
     console.log(find);
     data.sort(() => Math.random() - 0.5)
     const datatwo = data.slice(0,6);
     console.log(datatwo);
+    /*
     return (
         datatwo.map((d, i) =>
             <p key={i}>
@@ -28,6 +30,10 @@ function updateKanji(e) {
             </p>
         )
     )
+    */
+   return (
+       <kanjiMap />
+   )
 }
 
 function Single() {
