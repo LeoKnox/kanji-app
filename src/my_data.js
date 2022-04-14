@@ -13,6 +13,7 @@ function kanjiMap() {
 }
 
 function updateKanji(e) {
+    /*
     const find = e.target.value;
     const ans = datatwo[Math.floor(datatwo.length*Math.random())]
     console.log(ans);
@@ -20,7 +21,8 @@ function updateKanji(e) {
     const datatwo = data.slice(0,6);
     return (
         <kanjiMap />
-    )
+    ) */
+    kanjiMap();
 }
 
 function Single() {
