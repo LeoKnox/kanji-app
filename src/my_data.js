@@ -12,10 +12,10 @@ function kanjiMap() {
     )
 }
 
-function updateKanji(e, key) {
+function updateKanji(e) {
     data.sort(() => Math.random() - 0.5)
     const datatwo = data.slice(0,6);
-    console.log(key);
+    console.log(e.target.value);
     return (
         <kanjiMap />
     )
@@ -24,7 +24,7 @@ function updateKanji(e, key) {
 function Single() {
     return (
         datatwo.map((d, i) =>
-            <p key={i} className="kanjiCube" onClick={updateKanji}>{d.kanji}</p>
+            <p key={i} className="kanjiCube" value={d.meaning} onClick={updateKanji}>{d.kanji}</p>
         )
     )
 }
