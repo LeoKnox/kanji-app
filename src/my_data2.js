@@ -2,8 +2,8 @@ import React, { Component, useState } from 'react';
 import data from './data.json';
 
 function kanjiTest(myData) {
-    console.log("red");
     myData.sort(() => Math.random() - 0.5)
+    console.log(myData);
     return(data.slice(0,6));
 }
 
