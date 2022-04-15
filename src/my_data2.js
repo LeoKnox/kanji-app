@@ -1,10 +1,14 @@
 import React, { Component, useState } from 'react';
 import data from './data.json';
 
-function kanjiMap() {
-    data.sort(() => Math.random() - 0.5)
-    const datatwo = data.slice(0,6);
+function kanjiTest(myData) {
     console.log("red");
+    myData.sort(() => Math.random() - 0.5)
+    return(data.slice(0,6));
+}
+
+function kanjiMap() {
+    const datatwo = kanjiTest(data);
 
     return (
         <div className="kanjiWrapper">
