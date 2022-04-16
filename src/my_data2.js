@@ -1,17 +1,19 @@
-import React, { Component, useState, useEfect } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import data from './data.json';
 
 function KanjiMap() {
-    const [kanji, setKanji] = useState(kanjiTest(data));
+    const [kanji, setKanji] = useState(KanjiTest(data));
 
-    function kanjiTest(myData) {
-        const newData = myData.sort(() => Math.random() - 0.5);
-        console.log(newData);
-        return(newData.slice(0,6));
-    }
+    function KanjiTest(myData) {
+        useEffect(() => {
+            const newData = myData.sort(() => Math.random() - 0.5);
+            console.log(newData);
+            return(newData.slice(0,6));
+    }, []);
+};
 
     function changeData() {
-        setKanji(kanjiTest(data));
+        setKanji(KanjiTest(data));
     }
 
     return (
