@@ -7,7 +7,7 @@ function KanjiMap() {
     return (
         <div className="kanjiWrapper">
             {kanji.map((k, i) => (
-                <p key={i} onClick={console.log("red")} className="kanjiCube">{k.kanji}</p>
+                <p key={i} onClick={data.sort(() => Math.random() - 0.5).slice(0,6)} className="kanjiCube">{k.kanji}</p>
             ))}
         </div>
     )
