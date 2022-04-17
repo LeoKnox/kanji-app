@@ -1,5 +1,5 @@
 import './App.css';
-import KanjiMap from './my_data2.js';
+import KanjiMap from './my_data3.js';
 
 function App() {
   return (
