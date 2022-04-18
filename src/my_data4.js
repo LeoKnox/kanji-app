@@ -10,14 +10,10 @@ function KanjiMap() {
         }
     }, [])
 
-    const changeKanji = () => {
-        setKanji(data.sort(() => Math.random() - 0.5).slice(0,6))
-    }
-
     return (
         <div className="kanjiWrapper">
             {kanji.map((k, i) => (
-                <p key={i} onClick={() => changeKanji()} className="kanjiCube">{k.kanji}</p>
+                <p key={i} onClick={changeKanji()} className="kanjiCube">{k.kanji}</p>
             ))}
         </div>
     )
