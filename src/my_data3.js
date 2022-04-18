@@ -4,7 +4,10 @@ import data from './data.json';
 function KanjiMap() {
     const [kanji, setKanji] = useState(data);
 
-    //setKanji(data.sort(() => Math.random() - 0.5).slice(0,6))
+    function changeKanji(data) {
+        const newdata = (data.sort(() => Math.random() - 0.5).slice(0,6));
+        setKanji(newdata);
+    }
 /*
     useEffect(() => {
         setKanji(data.sort(() => Math.random() - 0.5).slice(0,6))
@@ -13,7 +16,7 @@ function KanjiMap() {
     return (
         <div className="kanjiWrapper">
             {kanji.map((k, i) => (
-                <p key={i} onClick={function setKanji(data.sort(() => Math.random() - 0.5).slice(0,6))} className="kanjiCube">{k.kanji}</p>
+                <p key={i} onClick={changeKanji(data)} className="kanjiCube">{k.kanji}</p>
             ))}
         </div>
     )
