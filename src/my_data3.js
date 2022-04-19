@@ -12,8 +12,10 @@ function KanjiMap() {
     }, [])
 
     const changeKanji = (x) => {
-        console.log(ans);
         setKanji(data.sort(() => Math.random() - 0.5).slice(0,6));
+        let i = Math.floor(Math.random()*kanji.length);
+        setAns(kanji[i]);
+        console.log(ans);
         //setAns(kanji[Math.floor(Math.random()*kanji.length)]);
         //console.log("blue");
     }
