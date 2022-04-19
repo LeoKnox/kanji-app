@@ -20,6 +20,12 @@
   color: rgb(194, 3, 3);
 }
 
+.answer {
+  display: block;
+  color: darkred;
+  text-align: center;
+}
+
 #kanjiTitle {
   color: darkred;
 }

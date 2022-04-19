@@ -10,12 +10,14 @@ function KanjiMap() {
             setKanji(data.sort(() => Math.random() - 0.5).slice(0,6));
         }
     }, [])
-
+    
     const changeKanji = (x) => {
-        setKanji(data.sort(() => Math.random() - 0.5).slice(0,6));
         let i = Math.floor(Math.random()*kanji.length);
+        console.log(i)
+        console.log(kanji);
+        setKanji(data.sort(() => Math.random() - 0.5).slice(0,6));
+        console.log(kanji);
         setAns(kanji[i]);
-        console.log(ans);
         //setAns(kanji[Math.floor(Math.random()*kanji.length)]);
         //console.log("blue");
     }
@@ -25,6 +27,7 @@ function KanjiMap() {
             {kanji.map((k, i) => (
                 <p key={i} onClick={() => changeKanji(k.meaning)} className="kanjiCube">{k.kanji}</p>
             ))}
+            <h3 className="answer">Meaning: {ans.meaning}</h3>
         </div>
     )
 }
