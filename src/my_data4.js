@@ -1,22 +1,12 @@
 import React, { Component, useState, useEffect } from 'react';
 import data from './data.json';
+import KanjiMap from './my_data3.js';
 
-function KanjiMap() {
-    const [kanji, setKanji] = useState(data);
-
-    useEffect(() => {
-        return () => {
-            setKanji(data.sort(() => Math.random() - 0.5).slice(0,6))
-        }
-    }, [])
+function KanjiMap2() {
 
     return (
-        <div className="kanjiWrapper">
-            {kanji.map((k, i) => (
-                <p key={i} onClick={changeKanji()} className="kanjiCube">{k.kanji}</p>
-            ))}
-        </div>
+        <KanjiMap />
     )
 }
 
-export default KanjiMap;
+export default KanjiMap2;
