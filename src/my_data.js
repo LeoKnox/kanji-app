@@ -14,16 +14,18 @@ function KanjiMap() {
     }, [])
 
     const changeKanji = (x) => {
-        let newData = data.sort(() => Math.random() - 0.5).slice(0,6);
-        setAns(newData)
-        setKanji(newData);
-        setAns(newData[Math.floor(Math.random()*kanji.length)]);
+        if (x === ans.kanji) {
+            let newData = data.sort(() => Math.random() - 0.5).slice(0,6);
+            setAns(newData)
+            setKanji(newData);
+            setAns(newData[Math.floor(Math.random()*kanji.length)]);
+        }
     }
 
     return (
         <div className="kanjiWrapper">
             {kanji.map((k, i) => (
-                <p key={i} onClick={() => changeKanji(k.meaning)} className="kanjiCube">{k.kanji}</p>
+                <p key={i} onClick={() => changeKanji(k.kanji)} className="kanjiCube">{k.kanji}</p>
             ))}
             <h3 className="answer">{ans.meaning}</h3>
         </div>
