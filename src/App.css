@@ -21,9 +21,11 @@
 }
 
 .answer {
-  display: block;
+  background-color: gold;
+  padding: 10px;
   color: darkred;
   text-align: center;
+  display: block;
 }
 
 #kanjiTitle {

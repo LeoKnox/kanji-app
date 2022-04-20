@@ -23,12 +23,14 @@ function KanjiMap() {
     }
 
     return (
+        <>
+        <h3 className="answer">Select Kanji for {ans.meaning}</h3>
         <div className="kanjiWrapper">
             {kanji.map((k, i) => (
                 <p key={i} onClick={() => changeKanji(k.kanji)} className="kanjiCube">{k.kanji}</p>
             ))}
-            <h3 className="answer">{ans.meaning}</h3>
         </div>
+        </>
     )
 }
 
