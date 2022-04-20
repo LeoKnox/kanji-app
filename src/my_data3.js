@@ -17,7 +17,7 @@ function KanjiMap() {
         return (kanji[i].meaning);
     }
     
-    const changeKanji = (x) => {
+    function newKanji() {
         //console.log(i)
         console.log(kanji);
         setKanji(data.sort(() => Math.random() - 0.5).slice(0,6));
@@ -26,6 +26,11 @@ function KanjiMap() {
         //setAns(kanji[Math.floor(Math.random()*kanji.length)]);
         //console.log("blue");
     }
+    
+    const changeKanji = (x) => {
+        newKanji();
+        console.log(kanji);
+    }
 
             //<h3 className="answer">Meaning: {ans.meaning}</h3>  from return
     return (
@@ -33,6 +38,7 @@ function KanjiMap() {
             {kanji.map((k, i) => (
                 <p key={i} onClick={() => changeKanji(k.meaning)} className="kanjiCube">{k.kanji}</p>
             ))}
+            <KanjiMap2 meaning="one" />
         </div>
     )
 }
