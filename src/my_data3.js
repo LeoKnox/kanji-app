@@ -1,5 +1,6 @@
 import React, { Component, useState, useEffect } from 'react';
 import data from './data.json';
+import KanjiMap2 from './my_data4.js';
 
 function KanjiMap() {
     const [kanji, setKanji] = useState(data);

@@ -1,11 +1,12 @@
 import React, { Component, useState, useEffect } from 'react';
 import data from './data.json';
-import KanjiMap from './my_data3.js';
 
-function KanjiMap2() {
+function KanjiMap2(props) {
 
     return (
-        <KanjiMap />
+        <div>
+            <h3>answer {props.meaning}</h3>>
+        </div>
     )
 }
 
