@@ -1,6 +1,5 @@
 import React, { Component, useState, useEffect } from 'react';
 import data from './data.json';
-import KanjiMap2 from './my_data4.js';
 
 function KanjiMap() {
     const [kanji, setKanji] = useState(data);
@@ -8,7 +7,9 @@ function KanjiMap() {
 
     useEffect(() => {
         return () => {
-            setKanji(data.sort(() => Math.random() - 0.5).slice(0,6));
+            let i = data.sort(() => Math.random() - 0.5).slice(0,6);
+            setKanji(i);
+            setAns(i[Math.floor(Math.random()*kanji.length)]);
         }
     }, [])
 
@@ -33,7 +34,7 @@ function KanjiMap() {
             {kanji.map((k, i) => (
                 <p key={i} onClick={() => changeKanji(k.meaning)} className="kanjiCube">{k.kanji}</p>
             ))}
-            <KanjiMap2 meaning={ans.meaning} />
+            <h3 className="answer">{ans.meaning}</h3>
         </div>
     )
 }
