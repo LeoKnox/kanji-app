@@ -3,8 +3,9 @@ from .models import Kanji
 
 class KanjiListSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Kanji = [
-            'id',
+        model = Kanji 
+        fields = [
+            'idkanji_dict',
             'kanji',
             'strokes',
             'meaning',
