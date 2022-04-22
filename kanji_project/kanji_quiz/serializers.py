@@ -12,3 +12,10 @@ class KanjiListSerializer(serializers.ModelSerializer):
             'pronounciation',
             'grade',
         ]
+
+class KanjiGradeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Kanji 
+        fields = [
+            'grade',
+        ]
