@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Kanji
 
-class KanjiListSerializer(seriailzers.ModelSerializer):
+class KanjiListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Kanji = [
             'id',
