@@ -6,18 +6,15 @@ const KanjiMap = () => {
     const [loading, setLoading] = useState(false);
     
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const { kanji: response } = await axios.get('http://127.0.0.1:8000/');
+        axios.get('http://127.0.0.1:8000/') 
+            .then(function (response) {
+                console.log(response.data);
+                setKanji(response.data);
                 console.log(kanji);
-                setKanji(response);
-            } catch (error) {
-                console.error(error);
-            }
-        setLoading(false);
-        }
-
-        fetchData();
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }, []);
 
     return (
