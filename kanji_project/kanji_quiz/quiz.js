@@ -17,9 +17,17 @@ const KanjiMap = () => {
             });
     }, []);
 
+    function changeKanji() {
+        console.log('red');
+    }
+
     return (
         <>
-            <p>test</p>
+        <div className="kanjiWrapper">
+            {kanji.map((k, i) => (
+                <p key={i} onClick={() => changeKanji(k.kanji)} className="kanjiCube">{k.kanji}</p>
+            ))}
+        </div>
         </>
     )
 };
