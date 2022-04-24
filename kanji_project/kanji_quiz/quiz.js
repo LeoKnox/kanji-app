@@ -11,6 +11,8 @@ function KanjiMap() {
             try {
                 const {data: response} = await axios.get('http://127.0.0.1:8000/');
                 console.log(response);
+                setKanji(response);
+                console.log(kanji);
             } catch (error) {
                 console.error(error.message);
             }
@@ -27,8 +29,8 @@ function KanjiMap() {
 
     return (
         <>
+        <h1>test</h1>
         <div className="kanjiWrapper">
-            <h1>test</h1>
         </div>
         </>
     )
