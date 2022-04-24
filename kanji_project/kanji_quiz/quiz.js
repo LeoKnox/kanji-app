@@ -3,28 +3,27 @@ import axios from 'axios';
 
 function KanjiMap() {
     const [loading, setLoading] = useState(true);
-    const [kanji, setKanji] = useState();
+    const [data, setData] = useState([]);
     
     useEffect(() => {
-        const data = async () => {
+        const fetchData = async () => {
             setLoading(true);
             try {
                 const {data: response} = await axios.get('http://127.0.0.1:8000/');
-                console.log(response);
-                setKanji(response);
-                console.log(kanji);
+                setData(response);
+                console.log(data);
             } catch (error) {
                 console.error(error.message);
             }
             setLoading(false);
         }
 
-        data();
+        fetchData();
     }, []);
 
     const changeKanji = (x) => {
-        let newData = kanji.sort(() => Math.random() - 0.5).slice(0,6);
-        setKanji(newData);
+        //let newData = kanji.sort(() => Math.random() - 0.5).slice(0,6);
+        //setKanji(newData);
     }
 
     return (
