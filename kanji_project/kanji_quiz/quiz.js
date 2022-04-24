@@ -8,9 +8,8 @@ const KanjiMap = () => {
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/') 
             .then(function (response) {
-                console.log(response.data);
-                setKanji(response.data);
-                console.log(kanji);
+                const selectKanji = response.data.sort(() => Math.random() - 0.5).slice(0,6);
+                setKanji(selectKanji);
             })
             .catch(function (error) {
                 console.log(error);
