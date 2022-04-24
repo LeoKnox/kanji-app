@@ -1,38 +1,30 @@
-import React, { Component, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function KanjiMap() {
-    const [loading, setLoading] = useState(true);
+const KanjiMap = () => {
     const [kanji, setKanji] = useState([]);
+    const [loading, setLoading] = useState(false);
     
     useEffect(() => {
-        const getKanji = async () => {
-            setLoading(true);
+        const fetchData = async () => {
             try {
-                const {kanji: response} = await axios.get('http://127.0.0.1:8000/');
-                setKanji(response);
+                const { kanji: response } = await axios.get('http://127.0.0.1:8000/');
                 console.log(kanji);
+                setKanji(response);
             } catch (error) {
-                console.error(error.message);
+                console.error(error);
             }
-            setLoading(false);
+        setLoading(false);
         }
 
-        getKanji();
+        fetchData();
     }, []);
-
-    const changeKanji = (x) => {
-        //let newData = kanji.sort(() => Math.random() - 0.5).slice(0,6);
-        //setKanji(newData);
-    }
 
     return (
         <>
-        <h1>test</h1>
-        <div className="kanjiWrapper">
-        </div>
+            <p>test</p>
         </>
     )
-}
+};
 
 export default KanjiMap;
