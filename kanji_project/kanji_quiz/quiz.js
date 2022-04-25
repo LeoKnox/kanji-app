@@ -11,20 +11,25 @@ const KanjiMap = () => {
             .then(function (response) {
                 const selectKanji = response.data;
                 setKanji(selectKanji);
+                setQuiz(kanji.sort(() => Math.random() - 0.5).slice(0,6));
             })
             .catch(function (error) {
                 console.log(error);
-            });
+            })
+            .then(
+                console.log(kanji)
+            )
     }, []);
 
     function changeKanji() {
-        console.log(" ");
+        setQuiz(kanji.sort(() => Math.random() - 0.5).slice(0,6));
+        console.log(quiz);
     }
 
     return (
         <>
         <div className="kanjiWrapper">
-            {kanji.sort(() => Math.random() - 0.5).slice(0,6).map((k, i) => (
+            {quiz.map((k, i) => (
                 <p key={i} onClick={() => changeKanji(k.kanji)} className="kanjiCube">{k.kanji}</p>
             ))}
         </div>
