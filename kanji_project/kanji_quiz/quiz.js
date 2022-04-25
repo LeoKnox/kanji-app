@@ -4,7 +4,7 @@ import axios from 'axios';
 const KanjiMap = () => {
     const [kanji, setKanji] = useState([]);
     const [quiz, setQuiz] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [answer, setAnswer] = useState();
     
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/') 
@@ -16,18 +16,22 @@ const KanjiMap = () => {
             .catch(function (error) {
                 console.log(error);
             })
-            .then(
-                console.log(kanji)
-            )
+            .then(function () {
+                console.log(quiz[2].kanji)
+                setAnswer(quiz[2].kanji);
+                console.log(answer);
+            })
     }, []);
 
     function changeKanji() {
         setQuiz(kanji.sort(() => Math.random() - 0.5).slice(0,6));
-        console.log(quiz);
+        setAnswer(quiz[Math.floor(Math.random()*kanji.length)].kanji);
+        console.log(answer);
     }
 
     return (
         <>
+        <h1>Answer: {answer}</h1>
         <div className="kanjiWrapper">
             {quiz.map((k, i) => (
                 <p key={i} onClick={() => changeKanji(k.kanji)} className="kanjiCube">{k.kanji}</p>
