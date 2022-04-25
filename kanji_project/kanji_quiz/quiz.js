@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import RandomKanji from './randomKanji.js';
 
 const KanjiMap = () => {
     const [kanji, setKanji] = useState([]);
@@ -17,6 +18,7 @@ const KanjiMap = () => {
     return (
         <>
         <h1>Kanji Fun</h1>
+        <RandomKanji />
         </>
     )
 };
