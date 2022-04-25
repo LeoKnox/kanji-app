@@ -18,7 +18,7 @@ const KanjiMap = () => {
             })
             .then(function () {
                 console.log(quiz[2].kanji)
-                setAnswer(quiz[2].kanji);
+                setAnswer(quiz[Math.floor(Math.random()*kanji.length)].kanji);
                 console.log(answer);
             })
     }, []);
