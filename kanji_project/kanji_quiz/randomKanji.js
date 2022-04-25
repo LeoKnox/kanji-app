@@ -1,11 +1,11 @@
 
 const RandomKanji = (kanji) => {
-    console.log(kanji.kanji[0]);
+    const displayKanji = kanji.kanji.sort(() => Math.random() - 0.5).slice(0,6);
+    console.log(displayKanji);
 
     return (
         <>
-        <h1>More Kanji Fun</h1>
-        {kanji.kanji.map((k, i) => (
+        {displayKanji.map((k, i) => (
             <p key={i} onClick="" className="kanjiCube">{k.kanji}</p>
         ))}
         </>
