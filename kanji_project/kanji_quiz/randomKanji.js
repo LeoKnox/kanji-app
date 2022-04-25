@@ -10,7 +10,7 @@ const RandomKanji = (kanji) => {
         <>
         <h1>Answer: {ans}</h1>
         {displayKanji.map((k, i) => (
-            <p key={i} onClick="" className="kanjiCube">{k.kanji}</p>
+            <p key={i} onClick='' className="kanjiCube">{k.kanji}</p>
         ))}
         </>
     )
