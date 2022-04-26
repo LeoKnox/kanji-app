@@ -17,7 +17,7 @@ const KanjiMap = () => {
 
     return (
         <>
-        <RandomKanji kanji={kanji} ans='六' />
+        <RandomKanji kanji={kanji} />
         </>
     )
 };
