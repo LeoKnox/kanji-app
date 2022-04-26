@@ -4,6 +4,8 @@ import RandomKanji from './randomKanji.js';
 
 const KanjiMap = () => {
     const [kanji, setKanji] = useState([]);
+    const [quiz, setQuiz] = useState([]);
+    const [ans, setAns] = useState();
     
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/') 
@@ -13,11 +15,26 @@ const KanjiMap = () => {
             .catch(function (error) {
                 console.log(error);
             })
+            .then(function() {
+                console.log(kanji);
+                const quizList = kanji.sort(() => Math.random() - 0.5).slice(0,6);
+                setQuiz(quizList);
+                setAns(quizList[Math.floor(Math.random()*quizList.length)].kanji);
+            })
     }, []);
+
+    function write() {
+        console.log("dddd");
+    }
 
     return (
         <>
-        <RandomKanji kanji={kanji} />
+        <h1>Answer: {ans}</h1>
+        <div className="kanjiWrapper">
+            {quiz.map((k, i) => (
+                <p key={i} onClick={write()} className="kanjiCube">{k.kanji}</p>
+            ))}
+        </div>
         </>
     )
 };
