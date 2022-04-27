@@ -3,11 +3,12 @@ import axios from 'axios';
 import RandomKanji from './randomKanji.js';
 
 let allKanji = [];
+let ans = '';
 
 const KanjiMap = () => {
     //const [kanji, setKanji] = useState([]);
     const [quiz, setQuiz] = useState([]);
-    const [ans, setAns] = useState('');
+    //const [ans, setAns] = useState('');
 
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/') 
@@ -22,7 +23,8 @@ const KanjiMap = () => {
             .then(function check() {
                 const quizList = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
                 setQuiz(quizList);
-                setAns(quizList[Math.floor(Math.random()*quizList.length)].kanji);
+                ans = quizList[Math.floor(Math.random()*quizList.length)].kanji;
+                //setAns(quizList[Math.floor(Math.random()*quizList.length)].kanji);
             })
 
         }, []);
@@ -31,8 +33,9 @@ const KanjiMap = () => {
         if (answer === ans) {
             const newQuiz = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
             //console.log(newQuiz);
-            setAns(answer);
+            //setAns(answer);
             setQuiz(newQuiz);
+            ans = newQuiz[Math.floor(Math.random()*newQuiz.length)].kanji;
             //setAns(newQuiz[Math.floor(Math.random()*newQuiz.length)].kanji);
             console.log("Right!");
         } else {
