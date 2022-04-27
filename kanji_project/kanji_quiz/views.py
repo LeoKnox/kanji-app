@@ -8,9 +8,12 @@ class KanjiGradeAPIView(generics.ListAPIView):
     serializer_class = KanjiGradeSerializer
 
 class KanjiListAPIView(generics.ListAPIView):
-    queryset = Kanji.objects.all().filter(grade=1)
     #queryset = Kanji.objects.all().filter(grade=1) | Kanji.objects.all().filter(grade=3)
     serializer_class = KanjiListSerializer
+
+    def get_queryset(self):
+        grade = self.request.grade
+        return Kanji.objects.filter(grade=grade)
 '''
 class KanjiListAPIView(generics.ListAPIView):
     queryset = Kanji.objects.all().filter(grade=1)
