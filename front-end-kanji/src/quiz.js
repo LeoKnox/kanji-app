@@ -1,46 +1,49 @@
-import React, { Component, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function KanjiMap() {
-    const [kanji, setKanji] = useState();
-    const [ans, setAns] = useState();
+let allKanji = [];
+let ans = '';
 
-    axios.get("http://127.0.0.1:8000/")
-        .then((response) => {
-            setKanji(response);
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
+const KanjiMap = () => {
+    const [quiz, setQuiz] = useState([]);
 
     useEffect(() => {
-        return () => {
-            let data = kanji;
-            let i = data.sort(() => Math.random() - 0.5).slice(0,6);
-            setKanji(i);
-            setAns(i[Math.floor(Math.random()*kanji.length)]);
-        }
-    }, [])
+        axios.get('http://127.0.0.1:8000/') 
+            .then(function (response) {
+                allKanji = response.data;
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+            .then(function check() {
+                const quizList = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
+                setQuiz(quizList);
+                ans = quizList[Math.floor(Math.random()*quizList.length)].meaning;
+            })
 
-    const changeKanji = (x) => {
-        if (x === ans.kanji) {
-            let newData = kanji.sort(() => Math.random() - 0.5).slice(0,6);
-            setAns(newData)
-            setKanji(newData);
-            setAns(newData[Math.floor(Math.random()*kanji.length)]);
+        }, []);
+
+    function check(answer) {
+        if (answer === ans) {
+            const newQuiz = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
+            setQuiz(newQuiz);
+            ans = newQuiz[Math.floor(Math.random()*newQuiz.length)].meaning;
+            console.log("Right!");
+        } else {
+            console.log("wrong");
         }
     }
 
     return (
         <>
-        <h3 className="answer">Select Kanji for {ans.meaning}</h3>
+        <h1 className="answer">Answer: {ans}</h1>
         <div className="kanjiWrapper">
-            {kanji.map((k, i) => (
-                <p key={i} onClick={() => changeKanji(k.kanji)} className="kanjiCube">{k.kanji}</p>
+            {quiz.map((k, i) => (
+                <p key={i} onClick={() => check(k.meaning)} className="kanjiCube">{k.kanji}</p>
             ))}
         </div>
         </>
     )
-}
+};
 
 export default KanjiMap;
