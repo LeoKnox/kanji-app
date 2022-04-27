@@ -13,7 +13,10 @@ class KanjiListAPIView(generics.ListAPIView):
 
     def get_queryset(self):
         grade = self.kwargs['grade']
-        return Kanji.objects.filter(grade=grade)
+        print(list(grade))
+        for g in grade:
+            print(g)
+        return Kanji.objects.filter(grade=3)
 '''
 class KanjiListAPIView(generics.ListAPIView):
     queryset = Kanji.objects.all().filter(grade=1)
