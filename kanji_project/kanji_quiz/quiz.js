@@ -36,7 +36,7 @@ const KanjiMap = () => {
 
     return (
         <>
-        <h1>Answer: {ans}</h1>
+        <h1 className="answer">Answer: {ans}</h1>
         <div className="kanjiWrapper">
             {quiz.map((k, i) => (
                 <p key={i} onClick={() => check(k.meaning)} className="kanjiCube">{k.kanji}</p>
