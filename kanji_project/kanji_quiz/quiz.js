@@ -2,32 +2,33 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import RandomKanji from './randomKanji.js';
 
+let allKanji = [];
+
 const KanjiMap = () => {
     //const [kanji, setKanji] = useState([]);
     const [quiz, setQuiz] = useState([]);
     const [ans, setAns] = useState('');
-    let allKanji = undefined
-        useEffect(() => {
-            axios.get('http://127.0.0.1:8000/') 
-                .then(function (response) {
-                    allKanji = response.data;
-                    //setKanji(response.data);
-                })
-                .catch(function (error) {
-                    console.log(error);
-                })
-                .then(function check() {
-                    const quizList = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
-                    setQuiz(quizList);
-                    setAns(quizList[Math.floor(Math.random()*quizList.length)].kanji);
-                    return allKanji;
-                })
+
+    useEffect(() => {
+        axios.get('http://127.0.0.1:8000/') 
+            .then(function (response) {
+                allKanji = response.data;
+                //setKanji(response.data);
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+            .then(function check() {
+                const quizList = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
+                setQuiz(quizList);
+                setAns(quizList[Math.floor(Math.random()*quizList.length)].kanji);
+            })
 
         }, []);
 
     function check(answer) {
         if (answer === ans) {
-            console.log(allKanji);
             const newQuiz = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
             //console.log(newQuiz);
             setAns(answer);
