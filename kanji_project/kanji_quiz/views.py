@@ -12,7 +12,7 @@ class KanjiListAPIView(generics.ListAPIView):
     serializer_class = KanjiListSerializer
 
     def get_queryset(self):
-        grade = self.request.grade
+        grade = self.kwargs['grade']
         return Kanji.objects.filter(grade=grade)
 '''
 class KanjiListAPIView(generics.ListAPIView):
