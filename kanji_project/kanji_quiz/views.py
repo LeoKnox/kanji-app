@@ -9,9 +9,15 @@ class KanjiGradeAPIView(generics.ListAPIView):
     serializer_class = KanjiGradeSerializer
 
 class KanjiListAPIView(generics.ListAPIView):
-    search = "SELECT * FROM kanji_app_db.kanji_dict WHERE grade = 1"
-    queryset = Kanji.objects.raw(search)
     serializer_class = KanjiListSerializer
+    def get_queryset(self):
+        filter_search = "SELECT * FROM kanji_app_db.kanji_dict WHERE "
+        grade = self.kwargs['grade']
+        for g in grade:
+            filter_search += "grade={} OR ".format(g)
+        print(filter_search)
+        queryset = Kanji.objects.raw(filter_search[:-3])
+        return queryset
 
 '''
 class KanjiListAPIView(generics.ListAPIView):
