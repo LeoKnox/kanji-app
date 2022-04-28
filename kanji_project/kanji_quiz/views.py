@@ -9,7 +9,8 @@ class KanjiGradeAPIView(generics.ListAPIView):
     serializer_class = KanjiGradeSerializer
 
 class KanjiListAPIView(generics.ListAPIView):
-    queryset = Kanji.objects.raw("SELECT * FROM kanji_app_db.kanji_dict WHERE grade = 1")
+    search = "SELECT * FROM kanji_app_db.kanji_dict WHERE grade = 1"
+    queryset = Kanji.objects.raw(search)
     serializer_class = KanjiListSerializer
 
 '''
