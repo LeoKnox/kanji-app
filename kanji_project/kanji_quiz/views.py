@@ -8,13 +8,10 @@ class KanjiGradeAPIView(generics.ListAPIView):
     queryset = Kanji.objects.values('grade').distinct()
     serializer_class = KanjiGradeSerializer
 
-class KanjiListAPIView(filters.FilterSet):
-    queryset = Kanji.objects.all()
+class KanjiListAPIView(generics.ListAPIView):
+    queryset = Kanji.objects.raw("SELECT * FROM kanji_app_db.kanji_dict WHERE grade = 1")
     serializer_class = KanjiListSerializer
-    filter_backends = (filters.DjangoFilterBackend,)
-    filter_fields = {
-        'grade': ["exact"]
-    }
+
 '''
 class KanjiListAPIView(generics.ListAPIView):
     #queryset = Kanji.objects.all().filter(grade=1) | Kanji.objects.all().filter(grade=3)
