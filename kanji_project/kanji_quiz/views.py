@@ -18,27 +18,3 @@ class KanjiListAPIView(generics.ListAPIView):
         print(filter_search)
         queryset = Kanji.objects.raw(filter_search[:-3])
         return queryset
-
-'''
-class KanjiListAPIView(generics.ListAPIView):
-    #queryset = Kanji.objects.all().filter(grade=1) | Kanji.objects.all().filter(grade=3)
-    serializer_class = KanjiListSerializer
-
-    def get_queryset(self):
-        filter_search = ""
-        grade = self.kwargs['grade']
-        for g in grade:
-            filter_search += ("Kanji.objects.filter(grade={}) | ".format(g))
-        gradex = Kanji.objects.all().filter(*grade)
-        queryset = Kanji.objects.all().filter(grade=1)
-        grades = exec(filter_search[0:-3])
-        print(gradex)
-        return Kanji.objects.filter(grade=3)
-'''
-
-'''
-class KanjiListAPIView(generics.ListAPIView):
-    queryset = Kanji.objects.all().filter(grade=1)
-    #queryset = Kanji.objects.all().filter(grade=1) | Kanji.objects.all().filter(grade=3)
-    serializer_class = KanjiListSerializer
-'''
