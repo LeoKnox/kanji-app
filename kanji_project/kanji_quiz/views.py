@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from rest_framework import generics
-from django_filters import rest_framework as filters
 from .serializers import KanjiListSerializer, KanjiGradeSerializer
 from .models import Kanji
 
@@ -15,6 +14,5 @@ class KanjiListAPIView(generics.ListAPIView):
         grade = self.kwargs['grade']
         for g in grade:
             filter_search += "grade={} OR ".format(g)
-        print(filter_search)
         queryset = Kanji.objects.raw(filter_search[:-3])
         return queryset
