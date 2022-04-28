@@ -4,11 +4,11 @@ import axios from 'axios';
 let allKanji = [];
 let ans = '';
 
-const KanjiMap = () => {
+const KanjiMap = (grades) => {
     const [quiz, setQuiz] = useState([]);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/') 
+        axios.get('http://127.0.0.1:8000/quiz/23') 
             .then(function (response) {
                 allKanji = response.data;
             })
@@ -16,6 +16,7 @@ const KanjiMap = () => {
                 console.log(error);
             })
             .then(function check() {
+                console.log(grades)
                 const quizList = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
                 setQuiz(quizList);
                 ans = quizList[Math.floor(Math.random()*quizList.length)].meaning;
