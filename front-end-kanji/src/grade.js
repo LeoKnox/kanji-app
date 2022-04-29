@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const SelectGrade = () => {
-    const [grades, setGrades] = [];
+    const [grades, setGrades] = useState([]);
 
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/grades/') 
