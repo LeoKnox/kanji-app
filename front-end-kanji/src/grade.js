@@ -18,13 +18,14 @@ const SelectGrade = () => {
     return (
         <>
         <h1>Choose grade</h1>
-        <form>
+        <form method="POST">
         {grades.map((g, i) => (
             <>
             <input type="checkbox" id="{g.grade}" name="{g.grade}" value="{g.grade}" key={i} />
             <label for="{g.grade}">{g.grade}</label><br />
             </>
         ))}
+        <input type="submit" value="Submit" />
         </form>
         </>
     )
