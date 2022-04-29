@@ -32,6 +32,16 @@
   color: darkred;
 }
 
+.gradeHeading {
+  color: darkblue;
+}
+
+.selectGrade {
+  background-color: palegoldenrod;
+  font-size: 22px;
+  padding: 5px 10px;
+}
+
 .container {
   color: darkblue;
   font-weight: bold;

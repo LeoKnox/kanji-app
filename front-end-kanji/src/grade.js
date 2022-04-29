@@ -17,7 +17,7 @@ const SelectGrade = () => {
 
     return (
         <>
-        <h1>Choose grade</h1>
+        <h1 className="gradeHeading">Choose grade</h1>
         <form action="http://127.0.0.1:8000/grades/" method="POST">
         {grades.map((g, i) => (
             <>
@@ -27,7 +27,7 @@ const SelectGrade = () => {
             </label>
             </>
         ))}
-        <input type="submit" value="Submit" />
+        <input className="selectGrade" type="submit" value="Submit" />
         </form>
         </>
     )
