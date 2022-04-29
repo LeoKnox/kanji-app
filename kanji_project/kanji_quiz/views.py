@@ -5,10 +5,10 @@ from .models import Kanji
 
 class KanjiGradeAPIView(generics.ListAPIView):
     serializer_class = KanjiGradeSerializer
+    queryset = Kanji.objects.values('grade').distinct()
 
-    def get_queryset(self):
-        queryset = Kanji.objects.values('grade').distinct()
     def post(self, request, *args, **kwargs):
+        serializer = KanjiGradeSerializer(data=request.data)
         print("posted")
 
 class KanjiListAPIView(generics.ListAPIView):
