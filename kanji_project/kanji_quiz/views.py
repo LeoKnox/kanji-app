@@ -4,8 +4,12 @@ from .serializers import KanjiListSerializer, KanjiGradeSerializer
 from .models import Kanji
 
 class KanjiGradeAPIView(generics.ListAPIView):
-    queryset = Kanji.objects.values('grade').distinct()
     serializer_class = KanjiGradeSerializer
+
+    def get_queryset(self):
+        queryset = Kanji.objects.values('grade').distinct()
+    def post(self, request, *args, **kwargs):
+        print("posted")
 
 class KanjiListAPIView(generics.ListAPIView):
     serializer_class = KanjiListSerializer
@@ -16,3 +20,12 @@ class KanjiListAPIView(generics.ListAPIView):
             filter_search += "grade={} OR ".format(g)
         queryset = Kanji.objects.raw(filter_search[:-3])
         return queryset
+
+'''
+class KanjiGradeAPIView(generics.ListAPIView):
+    queryset = Kanji.objects.values('grade').distinct()
+    serializer_class = KanjiGradeSerializer
+    '''
+
+class KanjiGradeGetAPIView(generics.CreateAPIView):
+    queryset = Kanji.objects.all()
