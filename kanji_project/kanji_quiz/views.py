@@ -1,12 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework.parsers import JSONParser
 from .serializers import KanjiListSerializer, KanjiGradeSerializer
 from .models import Kanji
 
-@api_view(['GET', 'POST'])
+@csrf_exempt
 def KanjiGradeAPIView(request):
     if request.method == 'GET':
         serializer = Kanji.objects.values('grade').distinct()
@@ -16,7 +17,7 @@ def KanjiGradeAPIView(request):
         data = JSONParser().parse(request)
         serializer = KanjiGradeSerializer(data=data)
         if serializer.is_valid():
-            print(data)
+            print("data")
 
 class KanjiListAPIView(generics.ListAPIView):
     serializer_class = KanjiListSerializer
