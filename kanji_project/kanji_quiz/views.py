@@ -2,15 +2,21 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from rest_framework import generics
 from rest_framework.decorators import api_view
+from rest_framework.parsers import JSONParser
 from .serializers import KanjiListSerializer, KanjiGradeSerializer
 from .models import Kanji
 
 @api_view(['GET', 'POST'])
 def KanjiGradeAPIView(request):
-    #if request.method == 'GET':
-    serializer = Kanji.objects.values('grade').distinct()
-    serializer_class = KanjiGradeSerializer(serializer, many=True)
-    return JsonResponse(serializer_class.data, safe=False)
+    if request.method == 'GET':
+        serializer = Kanji.objects.values('grade').distinct()
+        serializer_class = KanjiGradeSerializer(serializer, many=True)
+        return JsonResponse(serializer_class.data, safe=False)
+    elif request.method == 'POST':
+        data = JSONParser().parse(request)
+        serializer = KanjiGradeSerializer(data=data)
+        if serializer.is_valid():
+            print(data)
 
 class KanjiListAPIView(generics.ListAPIView):
     serializer_class = KanjiListSerializer
