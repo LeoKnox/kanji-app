@@ -31,7 +31,7 @@ const SelectGrade = () => {
     return (
         <>
         <h1 className="gradeHeading">Choose grade</h1>
-        <form>
+        <form onSubmit={selected}>
         {grades.map((g, i) => (
             <>
             <label key={i} className="container">{g.grade}
@@ -40,7 +40,7 @@ const SelectGrade = () => {
             </label>
             </>
         ))}
-        <input className="selectGrade" onClick={selected} type="submit" value="Submit" />
+        <input className="selectGrade" type="submit" value="Submit" />
         </form>
         </>
     )
