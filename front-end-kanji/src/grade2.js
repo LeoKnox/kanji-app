@@ -40,7 +40,7 @@ const SelectGrade = () => {
             </label>
             </>
         ))}
-        <input className="selectGrade" onClicke={selected} type="submit" value="Submit" />
+        <input className="selectGrade" onClick={selected} type="submit" value="Submit" />
         </form>
         </>
     )
