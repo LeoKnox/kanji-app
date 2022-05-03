@@ -5,6 +5,9 @@ const SelectGrade = () => {
     const [grades, setGrades] = useState([]);
 
     function selected(e) {
+        const grades = Array.from(e.target.grade).map(g => [
+            g.grade
+        ]);
         axios.post('http://127.0.0.1:8000/g/', {
             grade: e.target.value
         })
