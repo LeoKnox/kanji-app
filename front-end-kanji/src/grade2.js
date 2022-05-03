@@ -9,11 +9,12 @@ const SelectGrade = () => {
             grade: e.target.value
         })
         .then(function(response) {
+            console.log(e.target.value)
             console.log(response);
         })
         .catch(function(error) {
             console.log(error);
-        });
+        })
     }
 
     useEffect(() => {
