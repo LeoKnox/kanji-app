@@ -6,6 +6,7 @@ const SelectGrade = () => {
 
     function selected(e) {
         e.preventDefault();
+        console.log("ccc"+e.target.grade);
         const grades = Array.from(e.target.grade).map(g => [
             g.grade
         ]);
@@ -14,7 +15,7 @@ const SelectGrade = () => {
             grade: e.target.grade
         })
         .then(function(response) {
-            console.log(e.target.value)
+            console.log(e.target.grade)
             console.log(response);
         })
         .catch(function(error) {
