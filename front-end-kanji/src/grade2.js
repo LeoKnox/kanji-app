@@ -12,6 +12,12 @@ const SelectGrade = () => {
         ]);
     }
 
+    function handleCheck(e) {
+        e.preventDefault();
+        e.target.checked = !(e.target.checked);
+        console.log(e.target.grade);
+    }
+
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/g/') 
             .then(function (response) {
@@ -31,7 +37,7 @@ const SelectGrade = () => {
         {grades.map((g, i) => (
             <>
             <label key={i} className="container">{g.grade}
-                <input type="checkbox" onClick={setGrades} name="grade" value={g.grade} />
+                <input type="checkbox" onClick={handleCheck} name="grade" value={g.grade} />
                 <span className="checkmark"></span>
             </label>
             </>
