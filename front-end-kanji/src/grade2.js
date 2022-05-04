@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+let selected = [];
+
 const SelectGrade = () => {
     const [grades, setGrades] = useState([]);
 
@@ -14,8 +16,8 @@ const SelectGrade = () => {
 
     function handleCheck(e) {
         e.preventDefault();
-        e.target.checked = !(e.target.checked);
-        console.log(e.target.grade);
+        selected+=e.target.value;
+        console.log("xx"+selected);
     }
 
     useEffect(() => {
