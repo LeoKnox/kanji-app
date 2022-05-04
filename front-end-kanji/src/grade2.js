@@ -10,17 +10,6 @@ const SelectGrade = () => {
         const grades = Array.from(e.target.grade).map(g => [
             g.grade
         ]);
-        console.log("ddd"+grades);
-        axios.post('http://127.0.0.1:8000/g/', {
-            grade: e.target.grade
-        })
-        .then(function(response) {
-            console.log(e.target.grade)
-            console.log(response);
-        })
-        .catch(function(error) {
-            console.log(error);
-        })
     }
 
     useEffect(() => {
@@ -42,7 +31,7 @@ const SelectGrade = () => {
         {grades.map((g, i) => (
             <>
             <label key={i} className="container">{g.grade}
-                <input type="checkbox" name="grade" value={g.grade} />
+                <input type="checkbox" onClick={setGrades} name="grade" value={g.grade} />
                 <span className="checkmark"></span>
             </label>
             </>
