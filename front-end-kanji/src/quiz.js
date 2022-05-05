@@ -8,7 +8,9 @@ const KanjiMap = (grades) => {
     const [quiz, setQuiz] = useState([]);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/quiz/23') 
+        console.log(grades);
+        const x = "http://127.0.0.1:8000/quiz/"+grades[grades];
+        axios.get(x)
             .then(function (response) {
                 allKanji = response.data;
             })
