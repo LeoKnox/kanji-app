@@ -8,10 +8,15 @@ const SelectGrade = () => {
 
     function selected(e) {
         e.preventDefault();
-        console.log("ccc"+e.target.grade);
         const grades = Array.from(e.target.grade).map(g => [
             g.grade
         ]);
+        for (let i = 0; i < grades.length; i++) {
+            if (selections[i] === 0) {
+                console.log("true");
+            }
+            console.log("a");
+        }
     }
 
     function handleCheck(e) {
