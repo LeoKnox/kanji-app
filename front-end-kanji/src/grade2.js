@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import KanjiMap from './quiz.js';
 
 let selections = [];
 
@@ -15,6 +16,7 @@ const SelectGrade = () => {
             }
         }
         console.log(link);
+        return (<KanjiMap grades="1"/>);
     }
 
     function handleCheck(e) {
