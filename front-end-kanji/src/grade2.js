@@ -7,16 +7,12 @@ const SelectGrade = () => {
     const [grades, setGrades] = useState([]);
 
     function selected(e) {
+        let link =":"
         e.preventDefault();
-        const grades = Array.from(e.target.grade).map(g => [
-            g.grade
-        ]);
-        for (let i = 0; i < grades.length; i++) {
-            if (selections[i] === 0) {
-                console.log("true");
-            }
-            console.log("a");
+        for(let i = 1; i < selections.length; i++) {
+            link += selections[i];
         }
+        console.log(link);
     }
 
     function handleCheck(e) {
