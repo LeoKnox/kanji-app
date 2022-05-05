@@ -16,7 +16,7 @@ const SelectGrade = () => {
 
     function handleCheck(e) {
         e.preventDefault();
-        selections+=e.target.value;
+        selections[e.target.value] = e.target.value;
         console.log("xx"+selections);
     }
 
