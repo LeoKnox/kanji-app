@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <h1 id="kanjiTitle">Kanji Trainer</h1>
-      <KanjiMap grades="1"/>
+      <SelectGrade />
       <header className="App-header">
       </header>
     </div>
