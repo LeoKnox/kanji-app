@@ -6,6 +6,7 @@ let selections = [];
 
 const SelectGrade = () => {
     const [grades, setGrades] = useState([]);
+    const [checked, setChecked] = useState(true);
 
     function selected(e) {
         let link =":"
@@ -21,6 +22,7 @@ const SelectGrade = () => {
 
     function handleCheck(e) {
         e.preventDefault();
+        setChecked(!checked);
         selections[e.target.value] = !selections[e.target.value];
         console.log("xx"+selections);
     }
@@ -44,7 +46,7 @@ const SelectGrade = () => {
         {grades.map((g, i) => (
             <>
             <label key={i} className="container">{g.grade}
-                <input type="checkbox" onClick={handleCheck} name="grade" value={g.grade} />
+                <input type="checkbox" onClick={handleCheck} checked={checked} name="grade" value={g.grade} />
                 <span className="checkmark"></span>
             </label>
             </>
