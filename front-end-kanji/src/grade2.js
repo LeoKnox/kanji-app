@@ -45,8 +45,8 @@ const SelectGrade = () => {
         <form onSubmit={selected}>
         {grades.map((g, i) => (
             <>
-            <label key={i} className="container">{g.grade}:{selections[i]}
-                <input type="checkbox" onClick={handleCheck} checked={selections[i]} name="grade" value={g.grade} />
+            <label key={i} className="container">{g.grade}:{selections}
+                <input type="checkbox" onClick={handleCheck} checked={selections.i} name="grade" value={g.grade} />
                 <span className="checkmark"></span>
             </label>
             </>
