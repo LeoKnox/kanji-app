@@ -19,7 +19,9 @@ const SelectGrade = () => {
         }
         console.log(link);
         setChecked(true);
-        ReactDOM.render(<KanjiMap grade="1" />, document.getElementById('root'));
+        const container = document.getElementById('content');
+        const root = ReactDOM.createRoot(container);
+        root.render(<KanjiMap grade="1" />);
     }
 
     function handleCheck(e) {
