@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import axios from 'axios';
 import KanjiMap from './quiz.js';
 
@@ -10,7 +11,7 @@ const SelectGrade = () => {
 
     function selected(e) {
         let link =":"
-        //e.preventDefault();
+        e.preventDefault();
         for(let i = 1; i < selections.length; i++) {
             if (selections[i] == true) {
                 link += i;
@@ -18,7 +19,7 @@ const SelectGrade = () => {
         }
         console.log(link);
         setChecked(true);
-        return <KanjiMap grade="1" />;
+        ReactDOM.render(<KanjiMap grade="1" />, document.getElementById('root'));
     }
 
     function handleCheck(e) {
