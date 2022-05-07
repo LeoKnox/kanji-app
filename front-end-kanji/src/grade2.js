@@ -17,7 +17,11 @@ const SelectGrade = () => {
             }
         }
         console.log(link);
-        return (<KanjiMap grades="1"/>);
+        return (
+            <>
+                <KanjiMap grades="1"/>
+            </>
+        );
     }
 
     function handleCheck(e) {
