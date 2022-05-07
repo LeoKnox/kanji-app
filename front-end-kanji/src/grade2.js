@@ -10,18 +10,15 @@ const SelectGrade = () => {
 
     function selected(e) {
         let link =":"
-        e.preventDefault();
+        //e.preventDefault();
         for(let i = 1; i < selections.length; i++) {
             if (selections[i] == true) {
                 link += i;
             }
         }
         console.log(link);
-        return (
-            <>
-                <KanjiMap grades="1"/>
-            </>
-        );
+        setChecked(true);
+        return <KanjiMap grade="1" />;
     }
 
     function handleCheck(e) {
