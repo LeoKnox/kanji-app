@@ -1,5 +1,7 @@
 import './App.css';
+import ReactDOM from 'react-dom/client';
 //import KanjiMap from './my_data.js';
+import Game from './game.js';
 import KanjiMap from './quiz.js';
 import SelectGrade from './grade2.js';
 
@@ -7,12 +9,7 @@ import SelectGrade from './grade2.js';
   //<SelectGrade />
 function App() {
   return (
-    <div className="App">
-      <h1 id="kanjiTitle">Kanji Trainer</h1>
-      <SelectGrade />
-      <header className="App-header">
-      </header>
-    </div>
+    <Game />
   );
 }
 
