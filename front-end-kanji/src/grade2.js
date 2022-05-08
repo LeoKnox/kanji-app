@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Redirect, Route } from 'react-router-dom';
+import { useNavigate, useHistory, Redirect, Route } from 'react-router-dom';
 import KanjiMap from './quiz.js';
 
 let selections = [];
@@ -8,6 +8,7 @@ let selections = [];
 const SelectGrade = () => {
     const [grades, setGrades] = useState([]);
     const [checked, setChecked] = useState(true);
+    let navigate = useNavigate();
 
     function selected(e) {
         let link =":"
@@ -19,7 +20,7 @@ const SelectGrade = () => {
         }
         console.log(link);
         setChecked(true);
-        return (<Route path={e.quiz} />);
+        navigate("/quiz");
         //return (<KanjiMap grade="1" />);
     }
 
