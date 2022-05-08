@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 import KanjiMap from './quiz.js';
 
 let selections = [];
@@ -10,6 +10,7 @@ const SelectGrade = () => {
     const [checked, setChecked] = useState(true);
 
     function selected(e) {
+        let next = useHistory();
         let link =":"
         e.preventDefault();
         for(let i = 1; i < selections.length; i++) {
@@ -19,9 +20,8 @@ const SelectGrade = () => {
         }
         console.log(link);
         setChecked(true);
-        const container = document.getElementById('content');
-        const root = ReactDOM.createRoot(container);
-        root.render(<KanjiMap grade="1" />);
+        next.push("/quiz");
+        //return (<KanjiMap grade="1" />);
     }
 
     function handleCheck(e) {
