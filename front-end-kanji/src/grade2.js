@@ -20,7 +20,7 @@ const SelectGrade = () => {
         }
         console.log(link);
         setChecked(true);
-        navigate('/quiz');
+        navigate('/quiz/1');
         return (<KanjiMap grade="1" />);
     }
 

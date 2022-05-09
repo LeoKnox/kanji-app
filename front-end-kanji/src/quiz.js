@@ -14,6 +14,7 @@ const KanjiMap = (grades) => {
         axios.get(x)
             .then(function (response) {
                 allKanji = response.data;
+                console.log(allKanji+"dd")
             })
             .catch(function (error) {
                 console.log(error);
@@ -40,6 +41,7 @@ const KanjiMap = (grades) => {
     return (
         <>
         <h1 className="answer">Answer: {ans}</h1>
+        <h2>{grades.match.params.id}</h2>
         <div className="kanjiWrapper">
             {quiz.map((k, i) => (
                 <p key={i} onClick={() => check(k.meaning)} className="kanjiCube">{k.kanji}</p>

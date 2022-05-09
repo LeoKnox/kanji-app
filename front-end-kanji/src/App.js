@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Game />} />
-        <Route path="/quiz" element={<KanjiMap grades="1" />} />
+        <Route path="/quiz/:id" element={<KanjiMap grades="1" />} />
       </Routes>
     </BrowserRouter>
   );
