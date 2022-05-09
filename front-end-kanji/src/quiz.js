@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 let allKanji = [];
@@ -6,6 +7,7 @@ let ans = '';
 
 const KanjiMap = (grades) => {
     const [quiz, setQuiz] = useState([]);
+    const id = useParams();
 
     useEffect(() => {
         console.log("tt"+Object.keys(grades));
@@ -22,7 +24,7 @@ const KanjiMap = (grades) => {
                 const quizList = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
                 setQuiz(quizList);
                 ans = quizList[Math.floor(Math.random()*quizList.length)].meaning;
-                console.log(grades.grades+":"+grades.comp+"ee");
+                console.log(grades.grades+":"+id.id+"ee");
             })
 
         }, []);
