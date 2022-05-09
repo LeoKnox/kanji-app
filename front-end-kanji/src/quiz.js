@@ -41,7 +41,7 @@ const KanjiMap = (grades) => {
     return (
         <>
         <h1 className="answer">Answer: {ans}</h1>
-        <h2>{grades.match.params.id}</h2>
+        <h2>{grades}</h2>
         <div className="kanjiWrapper">
             {quiz.map((k, i) => (
                 <p key={i} onClick={() => check(k.meaning)} className="kanjiCube">{k.kanji}</p>
