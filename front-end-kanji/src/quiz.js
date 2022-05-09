@@ -14,7 +14,6 @@ const KanjiMap = (grades) => {
         axios.get(x)
             .then(function (response) {
                 allKanji = response.data;
-                console.log(allKanji+"dd")
             })
             .catch(function (error) {
                 console.log(error);
@@ -23,6 +22,7 @@ const KanjiMap = (grades) => {
                 const quizList = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
                 setQuiz(quizList);
                 ans = quizList[Math.floor(Math.random()*quizList.length)].meaning;
+                console.log(grades.grades+":"+grades.comp+"ee");
             })
 
         }, []);
