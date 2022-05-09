@@ -11,17 +11,17 @@ const SelectGrade = () => {
     let navigate = useNavigate();
 
     function selected(e) {
-        let link =":"
+        let link =""
         e.preventDefault();
         for(let i = 1; i < selections.length; i++) {
             if (selections[i] == true) {
                 link += i;
             }
         }
-        console.log(link);
+        console.log("aa"+link);
         setChecked(true);
-        navigate('/quiz');
-        return (<KanjiMap grade="1" />);
+        navigate(`/quiz/{link}/`);
+        return (<KanjiMap grades="1" />);
     }
 
     function handleCheck(e) {
