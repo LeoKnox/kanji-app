@@ -20,7 +20,7 @@ const SelectGrade = () => {
         }
         console.log(link);
         setChecked(true);
-        navigate('/quiz');
+        navigate('/quiz/');
         return (<KanjiMap grade="1" />);
     }
 
@@ -50,7 +50,7 @@ const SelectGrade = () => {
         {grades.map((g, i) => (
             <>
             <label key={i} className="container">{g.grade}:{selections}
-                <input type="checkbox" onClick={handleCheck} checked={selections.i} name="grade" value={g.grade} />
+                <input type="checkbox" onClick={handleCheck} checked={selections[i]} name="grade" value={g.grade} />
                 <span className="checkmark"></span>
             </label>
             </>
