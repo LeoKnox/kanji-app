@@ -2,7 +2,10 @@ import SelectGrade from './grade2.js';
 import KanjiMap from './quiz.js';
 
 const Game = (meters="grade") => {
-    const link = <SelectGrade />;
+    const link = "";
+    if (meters.meters ===" quiz") {
+      link = <SelectGrade />;
+    }
     console.log(meters.meters);
     if (meters.meters === "quiz") {
       return (
