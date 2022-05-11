@@ -2,6 +2,7 @@ import SelectGrade from './grade2.js';
 import KanjiMap from './quiz.js';
 
 const Game = (meters="grade") => {
+    const link = <SelectGrade />;
     console.log(meters.meters);
     if (meters.meters === "quiz") {
       return (
@@ -15,7 +16,7 @@ const Game = (meters="grade") => {
         <div className="App">
           <h1 id="kanjiTitle">Kanji Trainer</h1>
           <div className="Content">
-            <SelectGrade />
+            {link}
           </div>
           <header className="App-header">
           </header>
