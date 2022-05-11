@@ -1,11 +1,12 @@
 import SelectGrade from './grade2.js';
 import KanjiMap from './quiz.js';
 
-const Game = (meters="grade") => {
+const Game = (meters) => {
     let link = "";
-    if (meters.meters ===" quiz") {
+    if (meters.meters ==="home") {
       link = <SelectGrade />;
-    } else if (meters.meters === "home") {
+    } else if (meters.meters === "quiz") {
+      console.log("m"+JSON.stringify(meters));
       console.log("mg"+meters.grades+meters.meters);
       link = <KanjiMap  grades={`${meters.grades}`} />;
     }

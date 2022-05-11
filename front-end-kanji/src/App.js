@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Game meters="home" />} />
+        <Route path="/" element={<Game grades="1" meters="home" />} />
         <Route path="/quiz/:id/:second" element={<KanjiMap grades="1" meters="quiz" />} />
       </Routes>
     </BrowserRouter>
