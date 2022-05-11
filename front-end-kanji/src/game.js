@@ -6,6 +6,7 @@ const Game = (meters="grade") => {
     if (meters.meters ===" quiz") {
       link = <SelectGrade />;
     } else if (meters.meters === "home") {
+      console.log("mg"+meters.grades+meters.meters);
       link = <KanjiMap  grades={`${meters.grades}`} />;
     }
     console.log(meters.meters);
