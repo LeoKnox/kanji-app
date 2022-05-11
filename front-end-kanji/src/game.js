@@ -15,7 +15,7 @@ const Game = (meters) => {
       return (
         <>
         <h3>Quiz ME!!</h3>
-        <KanjiMap grades="2" />
+        {link}
         </>
       );
     } else {
