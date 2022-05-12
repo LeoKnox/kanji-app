@@ -14,7 +14,7 @@ const SelectGrade = () => {
         let link =""
         e.preventDefault();
         for(let i = 1; i < selections.length; i++) {
-            if (selections[i] == true) {
+            if (selections[i] === true) {
                 link += i;
             }
         }
