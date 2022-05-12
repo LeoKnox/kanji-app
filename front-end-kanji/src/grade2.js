@@ -50,7 +50,7 @@ const SelectGrade = () => {
         {grades.map((g, i) => (
             <>
             <label key={i} className="container">{g.grade}:{selections}
-                <input type="checkbox" onClick={handleCheck} checked={selections[i]} name="grade" value={g.grade} />
+                <input type="checkbox" onClick={handleCheck} checked={selections[i]} name="grade" value={g.grade-1} />
                 <span className="checkmark"></span>
             </label>
             </>
