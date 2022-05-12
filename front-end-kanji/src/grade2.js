@@ -25,7 +25,6 @@ const SelectGrade = () => {
     }
 
     function handleCheck(e) {
-        e.preventDefault();
         setChecked(!checked);
         selections[e.target.value] = !selections[e.target.value];
         console.log("xx"+selections);
