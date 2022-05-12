@@ -24,7 +24,6 @@
   background-color: gold;
   padding: 10px;
   color: darkred;
-  text-align: center;
   display: block;
 }
 
@@ -60,6 +59,7 @@
 /* Hide the browser's default checkbox */
 .container input {
   position: absolute;
+  text-align: center;
   opacity: 0;
   cursor: pointer;
   height: 0;
@@ -108,4 +108,9 @@
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
 }
