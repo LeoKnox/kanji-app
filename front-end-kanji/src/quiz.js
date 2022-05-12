@@ -25,7 +25,6 @@ const KanjiMap = (grades) => {
                 const quizList = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
                 setQuiz(quizList);
                 ans = quizList[Math.floor(Math.random()*quizList.length)].meaning;
-                console.log(grades.grades+":"+JSON.stringify(id.id)+"ee"+second.second);
             })
 
         }, []);

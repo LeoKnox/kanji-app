@@ -18,10 +18,8 @@ const SelectGrade = () => {
                 link += i;
             }
         }
-        console.log("aa");
         setChecked(true);
         navigate("/quiz/"+link+"/test");
-        return (<KanjiMap grades="1" />);
     }
 
     function handleCheck(e) {
