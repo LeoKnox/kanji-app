@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import KanjiMap from './quiz.js';
 
 let selections = [];
 
@@ -25,15 +24,12 @@ const SelectGrade = () => {
     function handleCheck(e) {
         setChecked(!checked);
         selections[e.target.value] = !selections[e.target.value];
-        console.log("xx"+selections);
     }
 
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/g/') 
             .then(function (response) {
-                console.log(response.data);
                 setGrades(response.data);
-                console.log(response.data)
             })
             .catch(function (error) {
                 console.log(error);
