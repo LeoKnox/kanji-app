@@ -15,9 +15,7 @@ const Game = (meters) => {
     return (
       <div className="App">
         <h1 id="kanjiTitle">Kanji Trainer</h1>
-        <div className="Content">
           {link}
-        </div>
         <header className="App-header">
         </header>
       </div>
