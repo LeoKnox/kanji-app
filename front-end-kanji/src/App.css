@@ -6,8 +6,8 @@
 .kanjiWrapper {
   display: grid;
   grid-template-columns: 10rem 10rem 10rem;
-  grid-template-rows: 10rem;
-  grid-gap: 1rem;
+  grid-template-rows: auto auto;
+  grid-gap: 1rem 1rem;
   grid-auto-flow: row;
   background-color: lightgray;
 }
@@ -22,9 +22,12 @@
 
 .answer {
   background-color: gold;
+  border-radius: 25px;
   padding: 10px;
   color: darkred;
-  display: block;
+  display: inline-block;
+
+  width: 40%;
 }
 
 #kanjiTitle {
