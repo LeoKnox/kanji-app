@@ -6,6 +6,7 @@
 .kanjiWrapper {
   display: inline-grid;
   grid-template-columns: auto auto auto;
+  grid-gap: 1rem;
   background-color: lightgray;
   padding: 10px;
   column-gap: 15px;
@@ -44,7 +45,7 @@
 .container {
   color: darkblue;
   font-weight: bold;
-  display: block;
+  display: grid;
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;
