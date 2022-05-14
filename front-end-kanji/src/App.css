@@ -55,7 +55,7 @@ body {
 .container {
   color: darkblue;
   font-weight: bold;
-  display: grid;
+  display: inline-grid;
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;

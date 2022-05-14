@@ -39,10 +39,10 @@ const SelectGrade = () => {
     return (
         <>
         <h1 className="gradeHeading">Choose grade</h1>
-        <form onSubmit={selected}>
+        <form onSubmit={selected} className="container">
         {grades.map((g, i) => (
             <>
-            <label key={i} className="container">{g.grade}:{selections}
+            <label key={i} className="checks">{g.grade}:{selections}
                 <input type="checkbox" onClick={handleCheck} checked={selections[i+1]} name="grade" value={g.grade} />
                 <span className="checkmark"></span>
             </label>
