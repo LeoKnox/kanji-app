@@ -24,6 +24,7 @@ body {
   border: 2px solid black;
   font-size: 6em;
   color: rgb(194, 3, 3);
+  max-width: 140px;
 }
 
 .answer {
