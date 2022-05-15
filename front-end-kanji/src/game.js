@@ -1,5 +1,6 @@
 import SelectGrade from './grade2.js';
 import KanjiMap from './quiz.js';
+import Footer from './footer.js';
 import { useParams } from 'react-router-dom';
 
 const Game = (meters) => {
@@ -18,6 +19,7 @@ const Game = (meters) => {
           {link}
         <header className="App-header">
         </header>
+        <Footer />
       </div>
     )
   }
