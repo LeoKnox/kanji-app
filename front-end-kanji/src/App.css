@@ -51,8 +51,8 @@ body {
 }
 
 .selectGrade {
-  display: grid;
-  width: 100px;
+  display: inline-block;
+  width: 5em;
   background-color: palegoldenrod;
   font-size: 22px;
   padding: 5px 10px;
@@ -76,7 +76,7 @@ body {
 }
 
 /* Hide the browser's default checkbox */
-.container input {
+.gradesList input {
   position: absolute;
   text-align: center;
   opacity: 0;
