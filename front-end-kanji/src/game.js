@@ -14,13 +14,15 @@ const Game = (meters) => {
       //link = <KanjiMap  grades={`${meters.grades}`} />;
     }
     return (
+      <>
       <div className="App">
         <h1 id="kanjiTitle">Kanji Trainer</h1>
           {link}
         <header className="App-header">
         </header>
-        <Footer />
       </div>
+      <Footer />
+      </>
     )
   }
 
