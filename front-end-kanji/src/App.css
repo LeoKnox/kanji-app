@@ -32,8 +32,6 @@ body {
   border-radius: 25px;
   padding: 10px;
   color: darkred;
-  display: inline-block;
-
   width: 40%;
 }
 
@@ -47,6 +45,8 @@ body {
 }
 
 .selectGrade {
+  display: grid;
+  width: 100px;
   background-color: palegoldenrod;
   font-size: 22px;
   padding: 5px 10px;
