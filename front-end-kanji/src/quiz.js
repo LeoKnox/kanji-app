@@ -20,17 +20,18 @@ const KanjiMap = (grades) => {
             .then(function check() {
                 const quizList = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
                 setQuiz(quizList);
-                ans = quizList[Math.floor(Math.random()*quizList.length)].meaning;
+                ans = quizList[Math.floor(Math.random()*quizList.length)];
             })
 
         }, []);
 
     function check(answer) {
-        if (answer === ans) {
+        if (answer === ans.meaning) {
             setTimeout( ()=> {
+                console.log("II"+ans.pronounciation);
                 const newQuiz = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
                 setQuiz(newQuiz);
-                ans = newQuiz[Math.floor(Math.random()*newQuiz.length)].meaning;
+                ans = newQuiz[Math.floor(Math.random()*newQuiz.length)];
                 console.log("Right!");
             }, 1000);
         } else {
@@ -40,7 +41,7 @@ const KanjiMap = (grades) => {
 
     return (
         <>
-        <h1 className="answer">Answer: {ans}</h1>
+        <h1 className="answer">Answer: {ans.meaning}</h1>
         <div className="kanjiWrapper">
             {quiz.map((k, i) => (
                 <p key={i} onClick={() => check(k.meaning)} className="kanjiCube">{k.kanji}</p>
