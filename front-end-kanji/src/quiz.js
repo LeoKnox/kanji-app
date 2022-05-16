@@ -27,12 +27,12 @@ const KanjiMap = (grades) => {
 
     function check(answer) {
         if (answer === ans) {
-            setTimeout(3000);
-            alert("red");
-            const newQuiz = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
-            setQuiz(newQuiz);
-            ans = newQuiz[Math.floor(Math.random()*newQuiz.length)].meaning;
-            console.log("Right!");
+            setTimeout( ()=> {
+                const newQuiz = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
+                setQuiz(newQuiz);
+                ans = newQuiz[Math.floor(Math.random()*newQuiz.length)].meaning;
+                console.log("Right!");
+            }, 1000);
         } else {
             console.log("wrong");
         }
