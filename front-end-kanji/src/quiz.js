@@ -27,8 +27,10 @@ const KanjiMap = (grades) => {
 
     function check(answer) {
         if (answer === ans.meaning) {
+            const pronounciation = document.createElement("button");
+            pronounciation.innerHTML = ans.pronounciation;
             setTimeout( ()=> {
-                console.log("II"+ans.pronounciation);
+                console.log("II"+JSON.stringify(ans));
                 const newQuiz = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
                 setQuiz(newQuiz);
                 ans = newQuiz[Math.floor(Math.random()*newQuiz.length)];
