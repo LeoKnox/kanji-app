@@ -7,12 +7,8 @@ let ans = '';
 
 const KanjiMap = (grades) => {
     const [quiz, setQuiz] = useState([]);
-    const id = useParams();
-    const second = useParams();
 
     useEffect(() => {
-        console.log("tt"+Object.keys(grades));
-        console.log(grades.grades);
         const x = `http://127.0.0.1:8000/quiz/${grades.grades}`;
         axios.get(x)
             .then(function (response) {
@@ -31,6 +27,8 @@ const KanjiMap = (grades) => {
 
     function check(answer) {
         if (answer === ans) {
+            setTimeout(3000);
+            alert("red");
             const newQuiz = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
             setQuiz(newQuiz);
             ans = newQuiz[Math.floor(Math.random()*newQuiz.length)].meaning;
