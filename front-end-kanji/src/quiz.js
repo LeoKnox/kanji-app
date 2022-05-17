@@ -28,8 +28,9 @@ const KanjiMap = (grades) => {
     function check(answer) {
         if (answer === ans.meaning) {
             const pronounciation = document.getElementsByClassName("answer");
-            pronounciation.append("red");
+            pronounciation[0].append("red");
             setTimeout( ()=> {
+                pronounciation[0].replace("");
                 console.log("II"+JSON.stringify(ans));
                 const newQuiz = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
                 setQuiz(newQuiz);
