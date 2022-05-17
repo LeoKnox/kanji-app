@@ -35,7 +35,7 @@ const KanjiMap = (grades) => {
                 setQuiz(newQuiz);
                 ans = newQuiz[Math.floor(Math.random()*newQuiz.length)];
                 console.log("Right!");
-                pronounciation.replace("");
+                pronounciation.value = "";
             }, 1000);
         } else {
             console.log("wrong");
