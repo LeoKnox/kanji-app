@@ -28,14 +28,14 @@ const KanjiMap = (grades) => {
     function check(answer) {
         if (answer === ans.meaning) {
             const pronounciation = document.getElementById("showAnswer");
-            pronounciation.append("Pronounciation: "+ans.pronounciation);
+            pronounciation.value = "Pronounciation: "+ ans.pronounciation;
+            console.log(pronounciation.value+"!!!");
             setTimeout( ()=> {
                 console.log("II"+JSON.stringify(ans));
                 const newQuiz = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
                 setQuiz(newQuiz);
                 ans = newQuiz[Math.floor(Math.random()*newQuiz.length)];
                 console.log("Right!");
-                pronounciation.value = "";
             }, 1000);
         } else {
             console.log("wrong");
