@@ -9,6 +9,7 @@ class KanjiListSerializer(serializers.ModelSerializer):
             'kanji',
             'strokes',
             'meaning',
+            'reading',
             'pronounciation',
             'grade',
         ]
