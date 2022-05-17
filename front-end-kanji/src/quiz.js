@@ -28,7 +28,7 @@ const KanjiMap = (grades) => {
     function check(answer) {
         if (answer === ans.meaning) {
             const pronounciation = document.getElementById("showAnswer");
-            pronounciation.append("Pronounciation: "+ ans.pronounciation);
+            pronounciation.append("Reading: " + ans.reading + " | Pronounciation: " + ans.pronounciation);
             setTimeout( ()=> {
                 console.log("II"+JSON.stringify(ans));
                 const newQuiz = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
@@ -36,7 +36,7 @@ const KanjiMap = (grades) => {
                 ans = newQuiz[Math.floor(Math.random()*newQuiz.length)];
                 console.log("Right!");
                 pronounciation.innerHTML = "";
-            }, 1000);
+            }, 3000);
         } else {
             console.log("wrong");
         }
@@ -45,8 +45,8 @@ const KanjiMap = (grades) => {
     return (
         <>
         <div className="answer">
-            <h1 >Answer: {ans.meaning}</h1>
             <h3 id="showAnswer"></h3>
+            <h1 >Answer: {ans.meaning}</h1>
         </div>
         <div className="kanjiWrapper">
             {quiz.map((k, i) => (
