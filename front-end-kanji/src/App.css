@@ -22,6 +22,12 @@ body {
   padding: 0 !important;
 }
 
+footer {
+  background-color: #333333;
+  color: white;
+  padding: 30px;
+}
+
 .kanjiCube {
   text-align: center;
   padding: 15px;
