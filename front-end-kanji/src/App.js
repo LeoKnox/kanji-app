@@ -8,6 +8,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Game meters="home" />} />
         <Route path="/quiz/:id/" element={<Game grades="1" meters="quiz" />} />
+        <Route path="/quiz/" element={<Game meters="home" error="noGrades" />} />
       </Routes>
     </BrowserRouter>
   );
