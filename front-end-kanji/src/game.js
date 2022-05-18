@@ -13,7 +13,8 @@ const Game = (meters) => {
       link = <KanjiMap  grades={`${id.id}`} />;
     }
     if (meters.error) {
-      myError = <h3 classId="error">Please select at least one grade.</h3>;
+      myError = document.getElementsByClassName("answer");
+      myError[0].append(<h3 className="error">Please select at least one grade.</h3>);
     }
     return (
       <>
