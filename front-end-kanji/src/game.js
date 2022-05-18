@@ -3,7 +3,7 @@ import KanjiMap from './quiz.js';
 import Footer from './footer.js';
 import { useParams } from 'react-router-dom';
 
-const Game = (meters, error) => {
+const Game = (meters) => {
     const id = useParams();
     let link = "";
     let myError = "";
@@ -12,8 +12,8 @@ const Game = (meters, error) => {
     } else if (meters.meters === "quiz") {
       link = <KanjiMap  grades={`${id.id}`} />;
     }
-    if (error) {
-      myError = <h3>Please select at least one grade.</h3>;
+    if (meters.error) {
+      myError = <h3 classId="error">Please select at least one grade.</h3>;
     }
     return (
       <>
