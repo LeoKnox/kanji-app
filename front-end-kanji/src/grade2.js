@@ -18,7 +18,7 @@ const SelectGrade = () => {
             }
         }
         setChecked(true);
-        navigate("/quiz/"+link+"/test");
+        navigate("/quiz/"+link);
     }
 
     function handleCheck(e) {
@@ -38,7 +38,7 @@ const SelectGrade = () => {
 
     return (
         <>
-        <h1 className="gradeHeading">Choose grade</h1>
+        <h1 className="answer">Choose grade</h1>
         <form onSubmit={selected} className="container">
         {grades.map((g, i) => (
             <>

@@ -1,17 +1,13 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Game from './game.js';
-import KanjiMap from './quiz.js';
 
-  //<KanjiMap grades="23"/>  quizes for Kanji from quiz.js
-  //<SelectGrade />
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Game meters="home" />} />
-        <Route path="/quiz/:id/:second" element={<Game grades="1" meters="quiz" />} />
-        <Route path="/quiz3/:id/:second" element={<KanjiMap grades="1" meters="quiz" />} />
+        <Route path="/quiz/:id/" element={<Game grades="1" meters="quiz" />} />
       </Routes>
     </BrowserRouter>
   );

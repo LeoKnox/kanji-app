@@ -30,7 +30,6 @@ const KanjiMap = (grades) => {
             const pronounciation = document.getElementById("showAnswer");
             pronounciation.append("Reading: " + ans.reading + " | Pronounciation: " + ans.pronounciation);
             setTimeout( ()=> {
-                console.log("II"+JSON.stringify(ans));
                 const newQuiz = allKanji.sort(() => Math.random() - 0.5).slice(0,6);
                 setQuiz(newQuiz);
                 ans = newQuiz[Math.floor(Math.random()*newQuiz.length)];
