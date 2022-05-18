@@ -9,19 +9,9 @@ from .models import Kanji
 
 @csrf_exempt
 def KanjiGradeAPIView(request):
-    if request.method == 'GET':
-        serializer = Kanji.objects.values('grade').distinct()
-        serializer_class = KanjiGradeSerializer(serializer, many=True)
-        return JsonResponse(serializer_class.data, safe=False)
-    elif request.method == 'POST':
-        data = JSONParser().parse(request)
-        serializer = KanjiGradeSerializer(data=data)
-        if serializer.is_valid():
-            print("data")
-        print(data)
-        serializer = Kanji.objects.values('grade').distinct()
-        serializer_class = KanjiGradeSerializer(serializer, many=True)
-        return JsonResponse(serializer_class.data, safe=False)
+    serializer = Kanji.objects.values('grade').distinct()
+    serializer_class = KanjiGradeSerializer(serializer, many=True)
+    return JsonResponse(serializer_class.data, safe=False)
 
 class KanjiListAPIView(generics.ListAPIView):
     serializer_class = KanjiListSerializer
