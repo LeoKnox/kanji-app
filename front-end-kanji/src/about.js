@@ -1,6 +1,14 @@
 const About = () => {
+    let paragraphOne = <p>
+        This is a response. With more text. And 
+        even more text.
+    </p>;
+
     return (
-        <h3>About this page</h3>
+        <>
+        <h1>About this page</h1>
+        {paragraphOne}
+        </>
     )
 }
 
