@@ -13,14 +13,14 @@ const Game = (meters) => {
       link = <KanjiMap  grades={`${id.id}`} />;
     }
     if (meters.error) {
-      return (<h3 className="error">Please select at least one grade.</h3>);
+      myError = <h3 className="error">Please select at least one grade</h3>
     }
     return (
       <>
       <div className="App">
         <h1 id="kanjiTitle">Kanji Trainer</h1>
-          {myError}
           {link}
+          {myError}
         <header className="App-header">
         </header>
       </div>
