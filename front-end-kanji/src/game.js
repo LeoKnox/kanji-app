@@ -20,7 +20,10 @@ const Game = (meters) => {
     return (
       <>
       <div className="App">
-        <button onClick={() => navigate('about')}>About</button>
+        <div className="nav">
+          <button onClick={() => navigate('about')} >About</button>
+          <button onClick={() => navigate('home')} >Home</button>
+        </div>
         <h1 id="kanjiTitle">Kanji Trainer</h1>
           {link}
           {myError}

@@ -6,6 +6,12 @@
   min-height: 100%;
 }
 
+.about {
+  background: lightgray;
+  padding: 20px;
+  margin: 0px;
+}
+
 .kanjiWrapper {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -26,6 +32,13 @@ footer {
   background-color: #333333;
   color: white;
   padding: 30px;
+}
+
+.nav {
+  grid-column: 3;
+  grid-row: 1;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .kanjiCube {
@@ -69,6 +82,16 @@ footer {
   margin-top: 30px;
   padding: 10px;
   border-radius: 10px;
+}
+
+.error {
+  color: white;
+  text-align: center;
+  grid-column: 2;
+  background: red;
+  padding:8px;
+  margin: 20px 30px;
+  border-radius: 5px;
 }
 
 .container {
