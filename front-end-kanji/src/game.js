@@ -21,8 +21,8 @@ const Game = (meters) => {
       <>
       <div className="App">
         <div className="nav">
-          <button onClick={() => navigate('about')} >About</button>
-          <button onClick={() => navigate('home')} >Home</button>
+          <button onClick={() => navigate('/about/')} >About</button>
+          <button onClick={() => navigate('/home/')} >Home</button>
         </div>
         <h1 id="kanjiTitle">Kanji Trainer</h1>
           {link}
