@@ -1,6 +1,8 @@
 const About = () => {
     let paragraphOne = 
-    <div>
+    <div className="about">
+        <h1>About this page</h1>
+        
         <p>
         Creating a page to learn Japanese Kanji. I
         set up a page to select the grade of Kanji
@@ -36,7 +38,6 @@ const About = () => {
 
     return (
         <>
-        <h1>About this page</h1>
         {paragraphOne}
         </>
     )
