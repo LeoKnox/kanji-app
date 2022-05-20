@@ -1,5 +1,6 @@
 import SelectGrade from './grade2.js';
 import KanjiMap from './quiz.js';
+import About from './about.js';
 import Footer from './footer.js';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -13,6 +14,8 @@ const Game = (meters) => {
       link = <SelectGrade />;
     } else if (meters.meters === "quiz") {
       link = <KanjiMap  grades={`${id.id}`} />;
+    } else if (meters.meters === "about") {
+      link = <About />;
     }
     if (meters.error) {
       myError = <h3 className="error">Please select at least one grade</h3>
