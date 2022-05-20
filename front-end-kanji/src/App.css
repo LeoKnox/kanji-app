@@ -9,7 +9,9 @@
 .about {
   background: lightgray;
   padding: 20px;
-  margin: 0px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  grid-column: 2;
 }
 
 .kanjiWrapper {

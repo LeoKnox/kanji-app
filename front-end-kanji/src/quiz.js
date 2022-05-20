@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 let allKanji = [];
@@ -9,6 +8,7 @@ const KanjiMap = (grades) => {
     const [quiz, setQuiz] = useState([]);
 
     useEffect(() => {
+        console.log(grades.grades);
         const x = `http://127.0.0.1:8000/quiz/${grades.grades}`;
         axios.get(x)
             .then(function (response) {
