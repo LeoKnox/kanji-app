@@ -1,4 +1,4 @@
-import SelectGrade from './grade2.js';
+import SelectGrade from './grade.js';
 import KanjiMap from './quiz.js';
 import About from './about.js';
 import Footer from './footer.js';
