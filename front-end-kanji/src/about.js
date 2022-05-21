@@ -33,6 +33,13 @@ const About = () => {
         Kanji and when user selects correct Kanji is displays
         a new set of Kanji.
         </p>
+
+        <p>
+            Future plans include user login to store kanji you
+            want to continue to practice. This will use CRUD
+            functionality as well as a one-to-many relationship
+            between user and Kanji.
+        </p>
     </div>;
 
     return (
