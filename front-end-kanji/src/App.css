@@ -43,6 +43,11 @@ footer {
   flex-direction: row-reverse;
 }
 
+.nav button {
+  color: mediumblue;
+  font-weight: bold;
+}
+
 .kanjiCube {
   text-align: center;
   padding: 15px;
