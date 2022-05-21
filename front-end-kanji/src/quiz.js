@@ -49,7 +49,10 @@ const KanjiMap = (grades) => {
         </div>
         <div className="kanjiWrapper">
             {quiz.map((k, i) => (
+                <>
                 <p key={i} onClick={() => check(k.meaning)} className="kanjiCube">{k.kanji}</p>
+                <p>{k.grade}</p>
+                </>
             ))}
         </div>
         </>
