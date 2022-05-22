@@ -152,6 +152,10 @@ footer {
   background-color: #ccc;
 }
 
+.container .selectGrade:hover {
+  background-color: gold;
+}
+
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
   background-color: #2196F3;
