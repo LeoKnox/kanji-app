@@ -48,6 +48,8 @@ footer {
 }
 
 .nav button {
+  background-color: lightgray;
+  border: 2px gray solid;
   color: mediumblue;
   font-weight: bold;
 }
