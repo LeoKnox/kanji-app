@@ -64,6 +64,10 @@ footer {
   max-width: 140px;
 }
 
+.kanjiWrapper :hover {
+  background-color: gold;
+}
+
 .answer {
   background-color: gold;
   border-radius: 25px;
