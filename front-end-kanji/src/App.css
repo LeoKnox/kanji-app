@@ -43,6 +43,10 @@ footer {
   flex-direction: row-reverse;
 }
 
+.nav :hover {
+  background-color: lightskyblue;
+}
+
 .nav button {
   color: mediumblue;
   font-weight: bold;
