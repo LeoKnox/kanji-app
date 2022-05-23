@@ -24,7 +24,7 @@ class KanjiListAPIView(generics.ListAPIView):
             queryset = Kanji.objects.raw(filter_search[:-3])
             return queryset
         else:
-            return redirect('kanji_list')
+            return redirect(kanji_grades)
 
 class KanjiGradeGetAPIView(generics.CreateAPIView):
     queryset = Kanji.objects.all()
